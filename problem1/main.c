@@ -36,11 +36,13 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
-    
+    //toma los datos y crea dos arreglos
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
+    // tomao los arreglos y los compara, da el out que no puede ser repetido
     
 }
 
