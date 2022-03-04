@@ -38,6 +38,8 @@ void getArray(struct array *parr)
 {
     //toma los datos y crea dos arreglos
 
+    
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
