@@ -25,7 +25,7 @@ void initArray(struct array *arr){
     arr->size = -1;
 }
 
-void printArray(struct array *parr)
+void printArray(struct array *parr)                                                                  //organiza LOS ARREGLOS 
 {
     for (int i = 0; i < parr->size; i++)
     {
@@ -37,8 +37,14 @@ void printArray(struct array *parr)
 void getArray(struct array *parr)
 {
     //toma los datos y crea dos arreglos
+    int size = 5;
+    int arr1[size];
 
-    
+    for(i=0;i==size; i++){
+
+
+    }
+
 
 }
 
