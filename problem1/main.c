@@ -46,7 +46,7 @@ void getArray(struct array *parr)
         entrada[strlen(entrada)-1]=0;
         int cambi=sscanf(entrada, "%d", &parr->size);
         parr->pdata =malloc(sizeof(int)*parr->size);
-        
+
         for(int i =0;i<parr->size;i++)
         {
             if(fgets(entrada2,5,stdin)!=NULL)
@@ -64,8 +64,40 @@ void getArray(struct array *parr)
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
-    // tomao los arreglos y los compara, da el out que no puede ser repetido
+    // tomao los arreglos y los compara
+    arrOut->pdata=malloc(20);
+    int bool= 0;
+    int posi =0;
+
     
+    for(int i =0; i < arrIn1->size; i++)
+    {
+        for (int j =0;j<arrIn2->size; j++)
+        {
+            if(*(arrIn1->pdata +i)==*(arrIn2->pdata+j))
+            {
+                for(int k=0;k<posi;k++)
+                {
+                    if(*(arrIn1->pdata +k)==*(arrIn2->pdata+j))
+                    {
+                        bool =1;
+                    }
+
+                }
+                if(bool !=1)
+                {
+                    *(arrOut->pdata + posi)= *(arrIn1->pdata+j);
+                    posi++;
+
+                }
+                bool=0;
+
+            }
+        }
+        
+
+    }
+    arrOut->size=posi;
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
