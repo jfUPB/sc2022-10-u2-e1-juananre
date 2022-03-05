@@ -37,8 +37,23 @@ void printArray(struct array *parr)                                             
 void getArray(struct array *parr)
 {
     //toma los datos y crea dos arreglos
-    int size = 5;
-    int arr1[size];
+
+    int tam; 
+    scanf("%d", &tam);
+    parr->size =tam;
+
+    int arreglotam[tam];
+    parr->pdata=malloc(sizeof(int)*parr->size);
+
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        int num;
+        scanf("%d", &tam);
+        arreglotam[i]=num;
+        parr->pdata[i]=arreglotam[i];
+
+    }
 
 
 }
