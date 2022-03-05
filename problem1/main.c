@@ -40,11 +40,6 @@ void getArray(struct array *parr)
     int size = 5;
     int arr1[size];
 
-    for(i=0;i==size; i++){
-
-
-    }
-
 
 }
 
