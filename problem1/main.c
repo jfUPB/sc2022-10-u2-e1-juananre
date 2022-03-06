@@ -38,8 +38,8 @@ void getArray(struct array *parr)
 {
     //toma los datos y crea dos arreglos
     
-    char entrada[20];
-    char entrada2[20];
+    char entrada[30];
+    char entrada2[30];
 
     if(fgets(entrada,5,stdin)!=NULL)
     {
@@ -65,8 +65,8 @@ void getArray(struct array *parr)
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
     // tomao los arreglos y los compara
-    arrOut->pdata=malloc(20);
-    int bool= 0;
+    arrOut->pdata=malloc(30);
+    
     int posi =0;
 
     
@@ -76,9 +76,10 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
         {
             if(*(arrIn1->pdata +i)==*(arrIn2->pdata+j))
             {
+                int bool= 0;
                 for(int k=0;k<posi;k++)
                 {
-                    if(*(arrIn1->pdata +k)==*(arrIn2->pdata+j))
+                    if(*(arrOut->pdata +k)==*(arrIn1->pdata+i))
                     {
                         bool =1;
                     }
@@ -86,7 +87,7 @@ void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOu
                 }
                 if(bool !=1)
                 {
-                    *(arrOut->pdata + posi)= *(arrIn1->pdata+j);
+                    *(arrOut->pdata + posi)= *(arrIn1->pdata+i);
                     posi++;
 
                 }
