@@ -25,7 +25,7 @@ void initArray(struct array *arr){
     arr->size = -1;
 }
 
-void printArray(struct array *parr)
+void printArray(struct array *parr)                                                                  //organiza LOS ARREGLOS 
 {
     for (int i = 0; i < parr->size; i++)
     {
@@ -36,12 +36,69 @@ void printArray(struct array *parr)
 
 void getArray(struct array *parr)
 {
+    //toma los datos y crea dos arreglos
     
+    char entrada[30];
+    char entrada2[30];
+
+    if(fgets(entrada,5,stdin)!=NULL)
+    {
+        entrada[strlen(entrada)-1]=0;
+        int cambi=sscanf(entrada, "%d", &parr->size);
+        parr->pdata =malloc(sizeof(int)*parr->size);
+
+        for(int i =0;i<parr->size;i++)
+        {
+            if(fgets(entrada2,5,stdin)!=NULL)
+            {
+                int cambi2=sscanf(entrada2,"%d",parr->pdata+i);
+
+            }
+
+        }
+    }
+
+   
+
 }
 
 void arrayCommon(struct array *arrIn1, struct array *arrIn2, struct array *arrOut)
 {
+    // tomao los arreglos y los compara
+    arrOut->pdata=malloc(30);
     
+    int posi =0;
+
+    
+    for(int i =0; i < arrIn1->size; i++)
+    {
+        for (int j =0;j<arrIn2->size; j++)
+        {
+            if(*(arrIn1->pdata +i)==*(arrIn2->pdata+j))
+            {
+                int bool= 0;
+                for(int k=0;k<posi;k++)
+                {
+                    if(*(arrOut->pdata +k)==*(arrIn1->pdata+i))
+                    {
+                        bool =1;
+                    }
+
+                }
+                if(bool !=1)
+                {
+                    *(arrOut->pdata + posi)= *(arrIn1->pdata+i);
+                    posi++;
+
+                }
+                bool=0;
+
+            }
+        }
+        
+
+    }
+    arrOut->size=posi;
 }
 
 void freeMemory(struct array *arr1, struct array *arr2, struct array *arr3)
